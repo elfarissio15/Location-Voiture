@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent A Car Easily</title>
+    <link rel="icon" href="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div>
+        <header class="header" id="heder">
+            <div class="container">
+                <div class="navbar-mobile">
+                    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                        <i class="fa-solid fa-bars" style="color: #7fcf9c;"></i>
+                    </div>
+                </div>
+                <div class="logo">
+                    <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="Logo">
+                    <h1>Rent Cars</h1>
+                </div>
+                <div class="navbar">
+                    <h1><i class="fa-solid fa-home" style="color: #7fcf9c;"></i><a onclick="window.location.href='index.html'">Home</a></h1>
+                    <h1><i class="fa-sharp fa-solid fa-circle-info" style="color: #7fcf9c;"></i><a onclick="smoothScrollTo('About')"> About</a></h1>
+                    <h1><i class="fa-solid fa-car" style="color: #7fcf9c;"></i><a onclick="smoothScrollTo('services')">Ride</a></h1>
+                    <h1><i class="fa-solid fa-screwdriver-wrench" style="color: #7fcf9c;"></i><a onclick="smoothScrollTo('Deels')"> Services</a></h1>
+                    <h1><i class="fa-solid fa-star" style="color: #7fcf9c;"></i><a onclick="smoothScrollTo('Review')">Reviews</a></h1>
+                    <h1><i class="fa-solid fa-phone" style="color: #7fcf9c;"></i><a onclick="smoothScrollTo('Contact')">Contact</a></h1>
+                </div>
+                <div class="wrap-check-44">
+                    <label class="switch">
+                        <i class="fa-solid fa-moon" style="color: #7fcf9c;"></i>
+                        <input type="checkbox" onclick="toggleThemeDark()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="account-section">
+                    <button id="sign-in" onclick="location.href('login.html')"><i class="fa-regular fa-user"></i> <span class="button-text">Sign In</span></button>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="close-button" onclick="toggleMenu()"><i class="fa-solid fa-x fa-sm" style="color: #7fcf9c;"></i></div>
+                <h1><a onclick="location.href('login.html')"><i class="fa-regular fa-user"></i>  Sign In</a></h1>
+                <h1><a onclick="window.location.href='index.html'"><i class="fa-solid fa-home" style="color: #7fcf9c;"></i>  Home</a></h1>
+                <h1><a onclick="setTimeout(() => {smoothScrollTo('About')}, 500);"><i class="fa-sharp fa-solid fa-circle-info" style="color: #7fcf9c;"></i>  About</a></h1>
+                <h1><a onclick="setTimeout(() => {smoothScrollTo('services')}, 500);"><i class="fa-solid fa-car" style="color: #7fcf9c;"></i>  Ride</a></h1>
+                <h1><a onclick="setTimeout(() => {smoothScrollTo('Deels')}, 500);"><i class="fa-solid fa-screwdriver-wrench" style="color: #7fcf9c;"></i>  Services</a></h1>
+                <h1><a onclick="setTimeout(() => {smoothScrollTo('Review')}, 500);"><i class="fa-solid fa-star" style="color: #7fcf9c;"></i>  Reviews</a></h1>
+                <h1><a onclick="setTimeout(() => {smoothScrollTo('Contact')}, 500);"><i class="fa-solid fa-phone" style="color: #7fcf9c;"></i>  Contact</a></h1>
+            </div>
+        </header>
+        <div class="warning">
+            <h1>Warning</h1>
+            <h3>This version of web site is still in the <b style="color: #ffe600;">Demo</b> version.</h3>
+        </div>
+        <div class="home-wrapper">
+            <div class="home" id="home">
+                <div class="left-hand-side">
+                    <h6>Plan your trip now</h6>
+                    <h1>Save <b style="color: #188540;">big</b> with our car rental</h1>
+                    <p>Rent the car of your dreams. Unbeatable prices,
+                         unlimited miles, flexible pick-up options and much more.</p>
+                    <button id="Bookbutton" onclick="smoothScrollTo(`services`)">Book Ride <i class="fa-sharp fa-regular fa-circle-check"></i></button>
+                    <button id="Learnbutton" onclick="window.open('https://elfarissi-portfolio.vercel.app','_blank')">Learn More <i class="fa-solid fa-angle-right"></i></button>
+                </div>
+                <div class="right-hand-side">
+                    <img class="header-images" src="https://i.ibb.co/B3zSCRJ/right-side-audi-removebg-preview.png"
+                        alt="home Logo">
+                </div>
+            </div>
+        </div>
+        <div class="about-us" id="About">
+            <div class="right-side">
+                <img src="https://i.ibb.co/SKqKkYg/about.jpg" alt="">
+            </div>
+            <div class="left-side">
+                <h3>About Us</h3>
+                <h1>You <b style="color: #188540;">start</b> the engine and your adventure <b style="color: #188540;">begins</b></h1>
+                <p>
+                    Our company is dedicated to providing top-notch car rental services that cater to your needs.
+                    Whether you're looking for a quick rental for a weekend getaway or a long-term rental for business,
+                    we've got you covered. With a wide variety of car types, numerous rental outlets, and dedicated
+                    repair
+                    shops, we ensure your journey is smooth and enjoyable.
+                </p>
+                <div class="positivitys">
+                    <div class="single-positive">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="">
+                        <div class="statistique">
+                            <h1>20</h1>
+                            <p>Car Types</p>
+                        </div>
+                    </div>
+                    <div class="single-positive">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="">
+                        <div class="statistique">
+                            <h1>85</h1>
+                            <p>Rental Outlets</p>
+                        </div>
+                    </div>
+                    <div class="single-positive">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="">
+                        <div class="statistique">
+                            <h1>75</h1>
+                            <p>Repair Shop</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="trip">
+            <h5>Have a nice Trip</h5>
+            <h1>Rent With <b style="color: #188540;">3 Easy-Quick</b> steps</h1>
+            <div class="steps">
+                <div class="single-step">
+                    <div class="image-preview">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="">
+                        <h3>Select Car</h3>
+                    </div>
+                    <p>We offers a big range of vehicles for all your driving needs.
+                        We have the perfect car to meet your needs
+                    </p>
+                </div>
+                <div class="single-step">
+                    <div class="image-preview">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="">
+                        <h3>Contact Operator</h3>
+                    </div>
+                    <p>Our knowledgeable and friendly operators are always 
+                        ready to help with any questions or concerns
+                    </p>
+                </div>
+                <div class="single-step">
+                    <div class="image-preview">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="">
+                        <h3>Let's Drive</h3>
+                    </div>
+                    <p>Whether you're hitting the open road, 
+                        we've got you covered with our wide range of cars
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="services" id="services">
+            <h5>Vehicle Models</h5>
+            <h1>Explore Out <b style="color: #188540;">Top</b> Deals</h1>
+            <p>Choose from a variety of our amazing vehicles to rent for your next adventure or business trip</p>
+            <div class="preview-cars">
+                <div class="cars-switch">
+                    <button class="car-btn" onclick="showCar(0)" id="btn-0">Mercedes-Benz E-Class</button>
+                    <button class="car-btn" onclick="showCar(1)" id="btn-6">Audi A7</button>
+                    <button class="car-btn" onclick="showCar(2)" id="btn-1">Volkswagen</button>
+                    <button class="car-btn" onclick="showCar(3)" id="btn-2">BMW-Series</button>
+                    <button class="car-btn" onclick="showCar(4)" id="btn-3">Ford Focus</button>
+                    <button class="car-btn" onclick="showCar(5)" id="btn-4">Honda Civic</button>
+                    <button class="car-btn" onclick="showCar(6)" id="btn-5">Hyundai Sonata</button>
+                    <button class="car-btn" onclick="showCar(7)" id="btn-7">Nissan</button>
+                    <button class="car-btn" onclick="showCar(8)" id="btn-8">Toyota Corolla</button>
+                </div>
+                <div class="Image-Car-On">
+                    <img id="car-image" src="./Audi_A7.png" alt="Car Image">
+                </div>
+                <div class="Table-infos">
+                    <div id="car-info">
+                        <div class="price">$40 / rent per day</div>
+                        <table>
+                            <tr><td>Mark</td><td>Audi</td></tr>
+                            <tr><td>Model</td><td>A7</td></tr>
+                            <tr><td>Year</td><td>2015</td></tr>
+                            <tr><td>Doors</td><td>4/5</td></tr>
+                            <tr><td>AC</td><td>Yes</td></tr>
+                            <tr><td>Transmission</td><td>Automatic</td></tr>
+                            <tr><td>Fuel</td><td>Gasoline</td></tr>
+                        </table>
+                        <button id="reserveBtn" class="reserve-btn">RESERVE NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="book" class="form-container">
+            <h2>Book a car</h2>
+            <form>
+            <div class="form-Gap">
+                    <div class="form-group">
+                        <label for="car-type"><i class="fa-solid fa-car-side"></i> Select Your Car Type <b style="color: red;">*</b></label>
+                        <select id="car-type" name="car-type" required>
+                            <option value="">Select your car type</option>
+                            <option value="">Honda Civic</option>
+                            <option value="">Hyundai Sonata</option>
+                            <option value="">Toyota Corolla</option>
+                            <option value="">Ford Focus</option>
+                            <option value="">Mercedes-Benz E-Class</option>
+                            <option value="">BMW-Series</option>
+                            <option value="">Audi A7</option>
+                            <option value="">Volkswagen</option>
+                            <option value="">Nissan</option>
+                            <!-- Add car types here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup-location"><i class="fa-solid fa-location-dot"></i> Pick-up <b style="color: red;">*</b></label>
+                        <select id="pickup-location" name="pickup-location" required>
+                            <option value="">Select pick up location</option>
+                            <option value="">Agadir</option>
+                            <option value="">Marrakech</option>
+                            <option value="">Casa Blanca</option>
+                            <option value="">Tangier</option>
+                            <option value="">Rabat</option>
+                            <option value="">Dakhla</option>
+                            <!-- Add pickup locations here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dropoff-location"><i class="fa-solid fa-location-dot"></i> Drop-off <b style="color: red;">*</b></label>
+                        <select id="dropoff-location" name="dropoff-location" required>
+                            <option value="">Select drop off location</option>
+                            <option value="">Agadir</option>
+                            <option value="">Marrakech</option>
+                            <option value="">Casa Blanca</option>
+                            <option value="">Tangier</option>
+                            <option value="">Rabat</option>
+                            <option value="">Dakhla</option>
+                            <!-- Add dropoff locations here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup-date"><i class="fa-solid fa-calendar-days"></i> Pick-up <b style="color: red;">*</b></label>
+                        <input type="date" id="pickup-date" name="pickup-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dropoff-date"><i class="fa-solid fa-calendar-days"></i> Drop-off <b style="color: red;">*</b></label>
+                        <input type="date" id="dropoff-date" name="dropoff-date" required>
+                    </div>
+                    <button type="submit" class="searchbutton">Search</button>
+            </div>
+            </form>
+        </div>
+        <div class="annoncement">
+            <h1>Save Money with our Good Pricing!</h1>
+            <h3>Top Airports. Local Suppliers.<b style="color: #188540;">24/7</b> Support.</h3>
+        </div>
+        <div class="about" id="Deels">
+            <img src="https://i.ibb.co/7WMWbGY/set-cars.png" alt="Car Image" id="TopImage">
+            <div class="Advantages">
+                <div class="Why-Us">
+                    <h4>Why Choose Us</h4>
+                    <h2>Best <b style="color: #188540;">deals</b> experience you will ever have</h2>
+                    <p>Discover unbeatable deals that offer incredible value for your money.
+                         We're committed to providing top-quality services and products at affordable prices,
+                          ensuring you get the best renting experience without breaking the bank
+                        . Don't miss out on these exceptional offers—save big and enjoy the ultimate renting experience with us.
+                    </p>
+                    <button id="Findbutton" onclick="smoothScrollTo(`home`)">Find Details <i class="fa-solid fa-angle-right"></i></button>
+                </div>
+                <div class="oportunitys">
+                    <div class="single-oportunity">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="" >
+                        <div class="description">
+                            <h4>Non Stop Drive</h4>
+                            <p>Elevate your driving experience with our top-notch vehicles, perfect for your cross-country adventures.</p>
+                        </div>
+                    </div>
+                    <div class="single-oportunity">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="" >
+                        <div class="description">
+                            <h4>Good Pricing For Quality</h4>
+                            <p>Enjoy the convenience of our all-inclusive pricing policy, providing everything you need at one transparent price.</p>
+                        </div>
+                    </div>
+                    <div class="single-oportunity">
+                        <img src="https://i.ibb.co/YLK2RDB/Chat-Connect-logo.png" alt="" >
+                        <div class="description">
+                            <h4>No Hidden Charges</h4>
+                            <p>Experience peace of mind with our no hidden charges policy. We believe in transparent and honest pricing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="review" id="Review">
+            <h4>Reviewed by People</h4>
+            <h2>Client's <b style="color: #188540;">Opinions</b></h2>
+            <p>Learn about the positive experiences our clients have had by exploring their testimonials.
+                They've seen the results of our service firsthand and are excited to share their stories with you.
+            </p>
+            <div class="Comments">
+                <div class="single-comment">
+                    <p>"We rented a car from this website and had an amazing experience!
+                         The booking was easy and the rental rates were very affordable. "
+                    </p>
+                    <div>
+                        <img src="https://i.ibb.co/tB4DZ9x/person-1.jpg" alt="profile">
+                        <div>
+                            <h5>BARI Mohamed</h5>
+                            <p>Tangier</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right" style="color: #188540;"></i>
+                    </div>
+                </div>
+                <div class="single-comment">
+                    <p>"The car was in great condition and made our trip even better. 
+                        Highly recommend for this car rental website!"
+                    </p>
+                    <div>
+                        <img src="https://i.ibb.co/WgZ0S78/person-2.jpg" alt="profile">
+                        <div>
+                            <h5>EL RAMI Samir</h5>
+                            <p>Casa Blanca</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right" style="color: #188540;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq">
+            <h4>FAQ</h4>
+            <h2>Frequently Asked <b style="color: #188540;">Questions</b></h2>
+            <p>Frequently Asked Questions About the Car Rental Booking Process on Our Website:
+                Answers to Common Concerns and Inquiries.
+            </p>
+            <div class="Questions-set">
+                <div class="single-Question">
+                    <div class="question">
+                        <div class="paragraph">
+                            1. What is special about comparing rental car deals?
+                        </div>
+                        <div class="fleche">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="answer">Comparing rental car deals is important as it helps find the best deal
+                        that fits your budget and requirements, ensuring you get the most value for your money.
+                        By comparing various options, you can find deals that offer lower prices, additional services,
+                        or better car models. You can find car rental deals by researching online and comparing prices
+                        from different rental companies.
+                    </div>
+                </div>
+                <div class="single-Question">
+                    <div class="question">
+                        <div class="paragraph">
+                            2. How do I find the car rental deals?
+                        </div>
+                        <div class="fleche">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="answer">You can find car rental deals by researching online and comparing
+                        prices from different rental companies. Websites such as Expedia, Kayak,
+                        and Travelocity allow you to compare prices and view available rental options.
+                        It is also recommended to sign up for email newsletters and follow rental car
+                        companies on social media to be informed of any special deals or promotions.
+                    </div>
+                </div>
+                <div class="single-Question">
+                    <div class="question">
+                        <div class="paragraph">
+                            3. How do I find such low rental car prices?
+                        </div>
+                        <div class="fleche">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="answer">Book in advance: Booking your rental car ahead of time can often result in lower prices.
+                        Compare prices from multiple companies: Use websites like Kayak, Expedia,
+                        or Travelocity to compare prices from multiple rental car companies. Look for discount codes and coupons:
+                        Search for discount codes and coupons that you can use to lower the rental price.
+                        Renting from an off-airport location can sometimes result in lower prices.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="App-download">
+            <div class="talk-side">
+                <h2>Download our app to get most out of it</h2>
+                <p>Thrown shy denote ten ladies though ask saw.
+                    Or by to he going think order event music.
+                    Incommode so intention defective at convinced.
+                    Led income months itself and houses you.
+                </p>
+                <div class="GooglePlay-AppStore">
+                    <img src="./googleApp.svg" alt="Google Play Image" onclick="window.location.href='https://play.google.com/store/apps/details?id=YOUR_APP_ID'">
+                    <img src="./appStore.svg" alt="App Store Image" onclick="window.location.href='https://apps.apple.com/app/idYOUR_APP_ID'">
+                </div>
+            </div>
+            <div class="show-side">
+                <img src="https://i.ibb.co/hWzsGj1/Preview-App.png" alt="preview Application">
+            </div>
+        </div>
+        <div class="contact-wraper" id="Contact">
+            <h4>Contact</h4>
+            <div class="contact">
+                <div class="iformations-contact">
+                    <h1>Need <b style="color: #188540;">additional</b> information?</h1>
+                    <p>A multifaceted professional skilled in multiple fields
+                        of research, development as well as a learning specialist.
+                        Over 15 years of experience.
+                    </p>
+                    <div class="phone" onclick="">
+                        <i class="fa-solid fa-phone"></i>
+                        <p style="font-weight: bold;">+212-771-477013</p>
+                    </div>
+                    <div class="email" onclick="location.href='mailto:oussamaelfarissi2005@gmail.com'">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p style="font-weight: bold;">oussamaelfarissi2005@gmail.com</p>
+                    </div>
+                    <div class="location" onclick="location.href='maps:Agadir'">
+                        <i class="fa-regular fa-paper-plane"></i>
+                        <p style="font-weight: bold;">Agadir , Morocco</p>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <form id="inputs-informations">
+                        <div class="input-field">
+                            <input type="text" id="name" class="inpt" required />
+                            <label for="name" class="lbl">Your Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" id="email" class="inpt" required />
+                            <label for="email" class="lbl">Your Email</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea id="message" class="inpt" rows="4" required></textarea>
+                            <label for="message" class="lbl">Your Message</label>
+                        </div>
+                        <button type="submit" class="submit-btn" onclick="">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="disclamer">
+            <h1>Book a car by getting in touch with us 
+                <b style="color: #188540; margin-left: 30px;">
+                    <i class="fa-solid fa-phone"></i>
+                    +212-771-477013
+                </b>
+            </h1>
+        </div>
+        <footer class="footer">
+            <div class="footer-info">
+                <div class="Info-contact">
+                    <h3>RENT A CAR</h3>
+                    <p style="margin-bottom: 30px;">We offer a wide range of vehicles to suit all your driving needs.
+                        Whether you're looking for a compact car, a family SUV,
+                        or a luxury sedan, we have the perfect car for you.
+                    </p>
+                    <div class="phone" onclick="">
+                        <i class="fa-solid fa-phone"></i>
+                        <p style="font-weight: bold;">+212-771-477013</p>
+                    </div>
+                    <div class="email" onclick="location.href='mailto:oussamaelfarissi2005@gmail.com'">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p style="font-weight: bold;">oussamaelfarissi2005@gmail.com</p>
+                    </div>
+                    <p class="design" onclick="location.href='https://elfarissi-portfolio.vercel.app'">Design by EL FARISSI Oussama</p>
+                </div>
+                <div class="Work">
+                    <h3>WORKING HOURS</h3>
+                    <p>Mon - Fri: 9:00AM - 9:00PM<br>
+                        Sat: 9:00AM - 19:00PM<br>
+                        Sun: Closed
+                    </p>
+                </div>
+                <div class="Subscription">
+                    <h3>SUBSCRIPTION</h3>
+                    <p>Subscribe your Email address for latest news & updates.
+                    </p>
+                    <div class="Message-infos">
+                        <form id="inputs-informations">
+                            <div class="input-field">
+                                <input type="text" id="subscription" class="inpt"  autocomplete="email" required />
+                                <label for="subscription" class="lbl">Enter Email Address</label>
+                            </div>
+                            <button type="submit" class="submit-btn" onclick="">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- Copyright -->
+                <p>&copy; 2024 <a style="color:#7fcf9c;">Cars Rent</a>. All rights reserved.</p>
+            </div>
+        </footer>
+        <div id="backToTopBtn" class="back-to-top" onclick="scrollToTop()">
+            <i class="fa-solid fa-angle-up"></i>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
