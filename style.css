@@ -466,9 +466,8 @@ a {
 }
 
 .image-preview img {
-    width: 100px;
+    width: 180px;
     object-fit: cover;
-    border-radius: 50%;
 }
 
 .single-step p {
@@ -713,9 +712,8 @@ table td {
 }
 
 .single-oportunity img {
-    width: 100px;
+    width: 130px;
     object-fit: cover;
-    border-radius: 50%;
     margin: 0px 15px;
 }
 
@@ -1067,7 +1065,7 @@ p {
     flex-direction:row ;
     max-width: 1000px;
     margin: 130px auto;
-    padding: 20px;
+    padding: 100px 20px;
     box-sizing: border-box;
     gap: 25px;
 }
@@ -1076,6 +1074,9 @@ p {
 }
 .right-side img{
     width: 500px
+}
+.left-side p{
+    margin-bottom:10px ;
 }
 
 .positivitys {
@@ -1088,14 +1089,14 @@ p {
     text-align: center;
     padding: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-.single-positive img {
-    width: 50px;
-    height: 50px;
+.single-positive i {
+    font-size: 45px;
     margin-top: 6px;
 }
+
 
 .statistique h1 {
     font-size: 2em;
@@ -1274,6 +1275,19 @@ p {
         text-align: center;
     }
 
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        height: auto;
+        /* Adjust height as needed for smaller screens */
+    }
+    
+    .about-us{
+        flex-direction: column;
+        padding:  0 5%;
+        
+    }
+
     .logo{
         justify-content: center;
         text-align: center;
@@ -1316,19 +1330,9 @@ p {
     
 }
 @media only screen and (max-width: 960px) {
-    .home {
-        flex-direction: column-reverse;
-        text-align: center;
-        height: auto;
-        /* Adjust height as needed for smaller screens */
-    }
+    
     .App-download{
         flex-direction: column-reverse;
-    }
-    .about-us{
-        flex-direction: column;
-        padding:  0 5%;
-        
     }
     .talk-side{
         text-align: center;
@@ -1398,11 +1402,11 @@ p {
     }
 
 }
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .Topic {
         text-align: center;
     }
-}
+} */
 @media only screen and (max-width: 550px) {
     .Advantages{
         width: 100vw;
