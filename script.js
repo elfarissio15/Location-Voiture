@@ -270,3 +270,47 @@ document.querySelectorAll('.single-Question .question').forEach(question => {
         }
     });
 });
+
+const signInButton = document.getElementById('SignInPanelButton');
+const signUpButton = document.getElementById('SignUpPanelButton');
+const container = document.getElementById('LoginPopup');
+
+signInButton.addEventListener('click', () => {
+    container.classList.remove("right-panel-active");
+});
+
+signUpButton.addEventListener('click', () => {
+    container.classList.add("right-panel-active");
+});
+
+// Function to create overlay
+function toggleOverlay() {
+    var overlay = document.getElementById("overlay");
+
+    if (!overlay) {
+        document.body.insertAdjacentHTML('beforeend', '<div id="overlay" class="overlay"></div>');
+        document.body.style.overflow = 'hidden'; // Disable scrolling
+    } else {
+        overlay.remove();
+        document.body.style.overflow = ''; // Re-enable scrolling
+    }
+}
+// Toggle login popup
+function toggleLoginPopup() {
+    var isHidden = container.classList.toggle("hidden");
+    if (!isHidden) {
+        toggleOverlay(); // Create overlay when the popup is shown
+    } else {
+        toggleOverlay(); // Remove overlay when the popup is hidden
+        container.querySelectorAll("input[type='text'],input[type='email'], input[type='password'],button[type='submit']").forEach(function(input) {
+            input.value = "";
+            input.disabled = false ;
+        });
+        // Remove any existing error messages
+        const existingErrorMessage = document.querySelector('.error-message');
+        if (existingErrorMessage) {
+            existingErrorMessage.remove();
+        }
+    }
+}
+
