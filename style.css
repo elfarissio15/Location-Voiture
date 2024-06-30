@@ -16,7 +16,10 @@ body {
         background-color: #333;
     }
     .form-container,.Questions-set,.single-comment{
-        box-shadow: 0 4px 6px rgba(63, 63, 63, 0.9);
+        box-shadow: 0 4px 6px rgba(36, 36, 36, 0.9);
+    }
+    .login-Popup{
+        box-shadow: 0 14px 28px rgba(36, 36, 36, 0.85), 0 10px 10px rgba(36, 36, 36, 0.82);
     }
     header,footer,.form-container,.single-comment,.Questions-set{
         background-color: #333;
@@ -34,6 +37,9 @@ body {
         .form-container{
             background-color: black;
         }
+    }
+    .login-Popup {
+        background-color: #333;
     }
 }
 
@@ -346,6 +352,14 @@ a {
     top:20px;
     right:20px;
     font-size:30px;
+}
+.close-Section{
+    position: absolute; /* Position absolutely within the popup */
+    top: 5px; /* Adjust top position from the edge */
+    right: 14px; /* Adjust right position from the edge */
+    cursor: pointer; /* Indicate clickable behavior */
+    font-size: 30px;
+    z-index: 2001;
 }
 .mobile-menu h1{
 
@@ -1142,7 +1156,178 @@ p {
     padding: 20px;
 }
 
+.login-Popup {
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    width: 800px;
+    max-width: 100%;
+    min-height: 480px;
+    display: flex;
+    background-color: #f0f0f0;
+    transition: all .3s;
+    z-index: 2000;
+}
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1px); /* Apply blur effect to the overlay */
+    z-index: 9; /* Ensure the overlay is above other content */
+}
+
+/* Forms */
+#SignUpForm, #SignInForm {
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Social Container */
+.social-container {
+    margin: 20px 0;
+}
+
+.social-container a {
+    border: 2px solid #dddddd;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+}
+
+.social-container a:hover {
+    color: #188540;
+    border-color: #188540;
+}
+
+/* Login Inputs */
+.LoginInput {
+    background: #eee;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+/* Buttons */
+#SignUpFormButton, #SignInFormButton, #SignInPanelButton, #SignUpPanelButton {
+    border-radius: 20px;
+    border: 1px solid white;
+    background: #188540;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+#SignUpFormButton:active, #SignInFormButton:active, #SignInPanelButton:active, #SignUpPanelButton:active {
+    transform: scale(0.95);
+}
+
+#SignUpFormButton.ghost, #SignInFormButton.ghost, #SignInPanelButton.ghost, #SignUpPanelButton.ghost {
+    background: transparent;
+    border-color: #ffffff;
+}
+
+/* Panels */
+.direct-sign-in, .direct-sign-up {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: #188540;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.6s ease-in-out;
+}
+
+.direct-sign-in p, .direct-sign-up p {
+    font-size: 14px;
+}
+
+.direct-sign-in {
+    left: 0;
+    transform: translateX(0%);
+}
+
+.direct-sign-up {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.login-Popup.right-panel-active .direct-sign-in {
+    transform: translateX(100%);
+}
+
+.login-Popup.right-panel-active .direct-sign-up {
+    transform: translateX(0%);
+}
+
+.sign-up-container, .sign-in-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.sign-up-container {
+    left: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+.login-Popup.right-panel-active .sign-up-container {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 5;
+}
+
+.sign-in-container {
+    right: 0;
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 5;
+}
+.sign-in-container a{
+    transition: all .3s;
+}
+.sign-in-container a:hover{
+    color: #188540
+}
+
+.login-Popup.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+}
+.hidden{
+    display: none;
+}
 /*.cars-grid {
     display: flex;
     flex-wrap: wrap;
@@ -1402,6 +1587,126 @@ p {
     }
 
 }
+@media only screen and (max-width: 800px) {
+    .login-Popup {
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .sign-up-container, .sign-in-container, .direct-sign-in, .direct-sign-up {
+        width: 100%;
+        height: 50%;
+    }
+    .sign-in-container ,.sign-up-container{
+        h2{
+            margin: 0px;
+        }
+    }
+
+    .direct-sign-in, .direct-sign-up {
+        height: 50%;
+        width: 100%;
+    }
+
+    .direct-sign-in {
+        top: 0;
+        left: 0;
+        transform: translateY(100%);
+    }
+
+    .direct-sign-up {
+        bottom: 0;
+        right: 0;
+        transform: translateY(200%);
+    }
+
+    .login-Popup.right-panel-active .direct-sign-in {
+        transform: translateY(200%);
+    }
+
+    .login-Popup.right-panel-active .direct-sign-up {
+        transform: translateY(0%);
+    }
+
+    .sign-up-container {
+        top: 100%;
+        left: 0;
+        transform: translateY(0);
+    }
+
+    .login-Popup.right-panel-active .sign-up-container {
+        transform: translateY(-100%);
+    }
+
+    .sign-in-container {
+        transform: translateY(0);
+    }
+
+    .login-Popup.right-panel-active .sign-in-container {
+        transform: translateY(100%);
+    }
+}
+@media only screen and (max-width: 800px) and (max-height: 800px) {
+    .login-Popup {
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .sign-up-container, .sign-in-container {
+        width: 100%;
+        height: 70%;
+    }
+
+    .direct-sign-in, .direct-sign-up {
+        width: 100%;
+        height: 30%;
+        p{
+            margin: 5px;
+        }
+    }
+
+    .direct-sign-in {
+        top: 0;
+        left: 0;
+        transform: translateY(70vh);
+        
+    }
+
+    .direct-sign-up {
+        bottom: 0;
+        right: 0;
+        transform: translateY(-30vh);
+    }
+
+    .login-Popup.right-panel-active .direct-sign-in {
+        transform: translateY(-30vh);
+    }
+
+    .login-Popup.right-panel-active .direct-sign-up {
+        transform: translateY(0vh);
+    }
+
+    .sign-up-container {
+        top: 70%;
+        left: 0;
+        transform: translateY(-70vh);
+    }
+
+    .login-Popup.right-panel-active .sign-up-container {
+        transform: translateY(-40vh);
+    }
+
+    .sign-in-container {
+        transform: translateY(0);
+    }
+
+    .login-Popup.right-panel-active .sign-in-container {
+        transform: translateY(100vh);
+    }
+}
+
 /* @media screen and (max-width: 600px) {
     .Topic {
         text-align: center;
