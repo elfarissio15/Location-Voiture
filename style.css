@@ -290,7 +290,7 @@ a {
 .navbar h1 {
     font-size: 15px;
     padding: 10px;
-    color: #7fcf9c;
+    color: #188540;
     position: relative;
     margin: 0 10px;
     /* Add spacing between the h1 elements */
@@ -370,9 +370,9 @@ a {
 .mobile-menu a {
     padding: 10px;
     text-align: center;
-    border-bottom: 1px solid #7fcf9c;
+    border-bottom: 1px solid #188540;
     font-weight: bold;
-    color: #7fcf9c;
+    color: #188540;
     width: 100%; /* Ensures the links take full width */
     display: block; /* Ensures the links behave as block elements */
     cursor: pointer;
@@ -531,7 +531,7 @@ a {
 }
 
 .car-btn:hover {
-    background: #7fcf9c;
+    background: #188540;
 }
 
 .car-btn.active {
@@ -1328,6 +1328,38 @@ p {
 .hidden{
     display: none;
 }
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.error-message{
+    width :100%;
+    position: relative;
+    padding: 8px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+#error-message{
+    animation :slideIn 0.3s ease forwards;
+}
+.Inputs-Error-Close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+}
 /*.cars-grid {
     display: flex;
     flex-wrap: wrap;
@@ -1440,6 +1472,17 @@ p {
     background-color: #1a6836;
 }
 */
+
+@keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
 
 /* Media Query for Smaller Screens */
 @media only screen and (max-width: 1030px) {
@@ -1647,7 +1690,7 @@ p {
         transform: translateY(100%);
     }
     .close-Section{
-        top: 20px; /* Adjust top position from the edge */
+        top: 30px; /* Adjust top position from the edge */
         right: 20px; /* Adjust right position from the edge */
     }
 }
