@@ -1646,6 +1646,10 @@ p {
     .login-Popup.right-panel-active .sign-in-container {
         transform: translateY(100%);
     }
+    .close-Section{
+        top: 20px; /* Adjust top position from the edge */
+        right: 20px; /* Adjust right position from the edge */
+    }
 }
 @media only screen and (max-width: 800px) and (max-height: 800px) {
     .login-Popup {
