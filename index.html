@@ -39,12 +39,12 @@
                     </label>
                 </div>
                 <div class="account-section">
-                    <button id="sign-in" onclick="location.href('login.html')"><i class="fa-regular fa-user"></i> <span class="button-text">Sign In</span></button>
+                    <button id="sign-in" onclick="toggleLoginPopup()"><i class="fa-regular fa-user"></i> <span class="button-text">Sign In</span></button>
                 </div>
             </div>
             <div class="mobile-menu" id="mobile-menu">
                 <div class="close-button" onclick="toggleMenu()"><i class="fa-solid fa-x fa-sm" style="color: #7fcf9c;"></i></div>
-                <h1><a onclick="location.href('login.html')"><i class="fa-regular fa-user"></i>  Sign In</a></h1>
+                <h1><a onclick="toggleLoginPopup()"><i class="fa-regular fa-user"></i>  Sign In</a></h1>
                 <h1><a onclick="window.location.href='index.html'"><i class="fa-solid fa-home" style="color: #7fcf9c;"></i>  Home</a></h1>
                 <h1><a onclick="setTimeout(() => {smoothScrollTo('About')}, 500);"><i class="fa-sharp fa-solid fa-circle-info" style="color: #7fcf9c;"></i>  About</a></h1>
                 <h1><a onclick="setTimeout(() => {smoothScrollTo('services')}, 500);"><i class="fa-solid fa-car" style="color: #7fcf9c;"></i>  Ride</a></h1>
@@ -431,6 +431,52 @@
                 </div>
             </div>
         </div>
+        <div class="login-Popup hidden" id="LoginPopup">
+            <div class="sign-up-container">
+                <form id="SignUpForm" action="#">
+                    <h2>Create Account</h2>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+                        <a href="#" class="social"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" id="RegistreName" class="LoginInput">
+                    <input type="email" placeholder="Email" id="RegistreEmail" class="LoginInput">
+                    <input type="password" placeholder="Password" id="RegistrePass" class="LoginInput">
+                    <input type="password" placeholder="Confirm Password" id="RegistreConfPass" class="LoginInput">
+                    <button type="button" id="SignUpFormButton">Sign Up</button>
+                </form>
+            </div>
+            <div class="sign-in-container">
+                <form id="SignInForm" action="#">
+                    <h2>Sign In</h2>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+                        <a href="#" class="social"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your account</span>
+                    <input type="email" placeholder="Email" id="LoginEmail" class="LoginInput">
+                    <input type="password" placeholder="Password" id="LoginPass" class="LoginInput">
+                    <a href="">Forgot your Password?</a>
+                    <button type="button" id="SignInFormButton">Sign In</button>
+                </form>
+            </div>
+            <div class="direct-sign-in">
+                <h2>Hello Friend!</h2>
+                <p>Enter your personal details and start journey with us</p>
+                <button type="button" id="SignUpPanelButton">Sign Up</button>
+            </div>
+            <div class="direct-sign-up">
+                <h2>Welcome Back!</h2>
+                <p>To keep connected with us please login with your personal info</p>
+                <button type="button" id="SignInPanelButton">Sign In</button>
+            </div>
+            <div class="close-Section" onclick="toggleLoginPopup()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
         <div class="disclamer">
             <h1>Book a car by getting in touch with us 
                 <b style="color: #188540; margin-left: 30px;">
@@ -469,7 +515,7 @@
                     <p>Subscribe your Email address for latest news & updates.
                     </p>
                     <div class="Message-infos">
-                        <form id="inputs-informations">
+                        <form id="inputs-subscription">
                             <div class="input-field">
                                 <input type="text" id="subscription" class="inpt"  autocomplete="email" required />
                                 <label for="subscription" class="lbl">Enter Email Address</label>
@@ -484,6 +530,7 @@
                 <p>&copy; 2024 <a style="color:#7fcf9c;">Cars Rent</a>. All rights reserved.</p>
             </div>
         </footer>
+        
         <div id="backToTopBtn" class="back-to-top" onclick="scrollToTop()">
             <i class="fa-solid fa-angle-up"></i>
         </div>
