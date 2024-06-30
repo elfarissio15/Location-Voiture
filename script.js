@@ -215,7 +215,8 @@ const cars = [
     // Add other car objects here
 ];
 
-function showCar(index,button) {
+// Ensure showCar sets the active class on the correct button
+function showCar(index) {
     const car = cars[index];
     document.getElementById('car-image').src = car.image;
     document.querySelector('#car-info .price').innerText = car.price;
@@ -314,3 +315,117 @@ function toggleLoginPopup() {
     }
 }
 
+function reserveCar() {
+    // Get the currently displayed car type
+    let carType = document.querySelector('.cars-switch .car-btn.active').getAttribute('data-car-type');
+    
+    // Set the car type in the booking form
+    let carTypeSelect = document.getElementById('car-type');
+    for (let i = 0; i < carTypeSelect.options.length; i++) {
+        if (carTypeSelect.options[i].text === carType) {
+            carTypeSelect.selectedIndex = i;
+            break;
+        }
+    }
+
+    // Optionally, scroll to the booking form
+    document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Function to handle Search form submission
+document.getElementById('SearchForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form input values
+    const selectedCar = document.getElementById('car-type').value;
+    const pickupLocation = document.getElementById('pickup-location').value;
+    const dropoffLocation = document.getElementById('dropoff-location').value;
+    const pickupDate = document.getElementById('pickup-date').value;
+    const dropoffDate = document.getElementById('dropoff-date').value;
+
+    if (selectedCar ==='' || pickupLocation ==='' || dropoffLocation ==='' || pickupDate ==='' || dropoffDate ==='' ) {
+        displayErrorMessage('All fields required!', 'search','#721c24')
+    }
+    // Validate dates
+    const currentDate = new Date();
+    const pickupDateObj = new Date(pickupDate);
+    const dropoffDateObj = new Date(dropoffDate);
+
+    // Check if pickup date is valid (not before current date)
+    if (pickupDateObj < currentDate) {
+        showHighPropertyMessages('Pick-up date must be today or a future date.', 'red');
+        return;
+    }
+
+    // Check if drop-off date is valid (at least 1 day after pick-up date)
+    const minDropoffDate = new Date(pickupDateObj);
+    minDropoffDate.setDate(minDropoffDate.getDate() + 1); // Add 1 day to pickup date
+
+    if (dropoffDateObj <= pickupDateObj || dropoffDateObj < minDropoffDate) {
+        showHighPropertyMessages('Drop-off date must be at least 1 day after the pick-up date.', 'red');
+        return;
+    }
+
+    // Create an object to hold the form data
+    const formData = {
+        carType: selectedCar,
+        pickupLocation: pickupLocation,
+        dropoffLocation: dropoffLocation,
+        pickupDate: pickupDate,
+        dropoffDate: dropoffDate
+    };
+
+    // Process the form data (e.g., send to a server, log to console)
+    console.log('Form Data:', formData);
+
+    
+});
+
+function showHighPropertyMessages(notification,color){
+    const message = document.createElement('div');
+    message.textContent= notification ;
+    message.style.backgroundColor= color ;
+    message.classList.add('notification'); // Add the CSS class to the created div
+
+    document.body.appendChild(message); // Append the message to the body of the document
+    setInterval(function(){
+        message.classList.add('hidden');
+    },3000)
+}
+
+// Function to display error message
+function displayErrorMessage(message, type, color) {
+    const errorMessage = document.createElement('div');
+    errorMessage.textContent = message;
+    errorMessage.style.color = color;
+    errorMessage.classList.add("error-message");
+
+    const errorClose = document.createElement('div');
+    errorClose.addEventListener('click', () => {
+        errorMessage.remove();
+    });
+    errorClose.innerHTML = `
+        <i class="fa-solid fa-xmark"></i>
+    `;
+    errorClose.classList.add('Inputs-Error-Close');
+    errorMessage.appendChild(errorClose);
+
+    // Add slide-in animation
+    errorMessage.style.animation = "slideIn 0.3s ease forwards";
+
+    // Remove any existing error messages
+    const existingErrorMessage = document.querySelector('.error-message');
+    if (existingErrorMessage) {
+        existingErrorMessage.remove();
+    }
+
+    // Insert error message after appropriate input field
+    let inputField;
+    if (type === 'search') {
+        inputField = document.getElementById('SearchForm');
+    }
+
+    if (inputField) {
+        inputField.parentNode.insertBefore(errorMessage, inputField);
+    }
+}
